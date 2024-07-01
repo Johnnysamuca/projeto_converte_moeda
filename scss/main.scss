@@ -1,0 +1,133 @@
+// Mixins
+
+@mixin flex($flow: row, $align: stretch, $justify: start, $gap: 0) {
+  display: flex;
+  flex-flow: $flow;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin grid($grid: auto, $gridRow: auto, $gridColumn: auto) {
+  display: grid;
+  grid: $grid;
+  grid-row: $gridRow;
+  grid-column: $gridColumn;
+}
+
+// Variaveis
+$color-primary: #40916c;
+$color-primary-light: #74c69d;
+$color-secondary: #081c15;
+$color-secondary-light: #1b4332;
+$color-neutral: #d8f3dc;
+$black: #000;
+$white: #fff;
+
+// Padrão
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+
+// Estilização da main
+
+.main {
+  height: 100dvh;
+  background-color: $color-primary;
+  @include grid(repeat(2, 1fr) / repeat(4, 1fr), auto, auto);
+
+  &__caixa-titulo {
+    max-width: 50rem;
+    @include grid($gridRow: 1 / span 2, $gridColumn: 1 / span 2);
+    padding: 1.6rem 2rem;
+    background-color: $color-secondary;
+    color: $white;
+  }
+
+  &__caixa-cotacaoAtual {
+    @include flex($align: center, $justify: space-between);
+  }
+
+  &__cotacaoAtual {
+    @include flex(column, center, $justify: space-around);
+    background-color: $color-primary-light;
+    padding: 1.6rem 2rem;
+    border-radius: 1rem;
+    min-height: 20rem;
+  }
+
+  &__valor-cotacao {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: $black;
+  }
+
+  &__moeda {
+    font-weight: 700;
+    color: $color-secondary-light;
+  }
+
+  // Formulario
+
+  &__form {
+    @include grid($gridRow: 1 / span 2, $gridColumn: 3 / span 2);
+    @include flex($align: center, $justify: center);
+  }
+
+  &__conteudoForm {
+    @include flex(column, $align: center, $gap: 4.88rem);
+    background-color: $color-secondary-light;
+    min-width: 60rem;
+    border-radius: 1rem;
+    padding: 2rem 2.5rem;
+  }
+
+  &__resultConversao {
+    @include flex($align: center, $justify: center);
+    background-color: $color-neutral;
+    border-radius: 1rem;
+    width: 40%;
+    height: 15rem;
+    font-size: 2.76rem;
+    font-weight: 700;
+  }
+
+  &__moedaCampo {
+    font-size: 1.92rem;
+    border-radius: 1rem;
+    width: 60%;
+    padding: 0.65rem 1.28rem;
+    border: none;
+  }
+
+  &__moedaSelect {
+    font-size: 1.92rem;
+    border-radius: 1rem;
+    width: 60%;
+    padding: 0.65rem 1.28rem;
+    border: none;
+  }
+
+  &__btnConverte {
+    font-size: 2.3rem;
+    border-radius: 1rem;
+    width: 40%;
+    padding: 0.65rem 1.28rem;
+    border: none;
+    background-color: $color-secondary;
+    color: $color-neutral;
+  }
+}

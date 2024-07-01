@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+
+.main {
+  height: 100dvh;
+  background-color: #40916c;
+  display: grid;
+  grid: repeat(2, 1fr)/repeat(4, 1fr);
+  grid-row: auto;
+  grid-column: auto;
+}
+.main__caixa-titulo {
+  max-width: 50rem;
+  display: grid;
+  grid: auto;
+  grid-row: 1/span 2;
+  grid-column: 1/span 2;
+  padding: 1.6rem 2rem;
+  background-color: #081c15;
+  color: #fff;
+}
+.main__caixa-cotacaoAtual {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.main__cotacaoAtual {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+  background-color: #74c69d;
+  padding: 1.6rem 2rem;
+  border-radius: 1rem;
+  min-height: 20rem;
+}
+.main__valor-cotacao {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #000;
+}
+.main__moeda {
+  font-weight: 700;
+  color: #1b4332;
+}
+.main__form {
+  display: grid;
+  grid: auto;
+  grid-row: 1/span 2;
+  grid-column: 3/span 2;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.main__conteudoForm {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 4.88rem;
+  background-color: #1b4332;
+  min-width: 60rem;
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+}
+.main__resultConversao {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background-color: #d8f3dc;
+  border-radius: 1rem;
+  width: 40%;
+  height: 15rem;
+  font-size: 2.76rem;
+  font-weight: 700;
+}
+.main__moedaCampo {
+  font-size: 1.92rem;
+  border-radius: 1rem;
+  width: 60%;
+  padding: 0.65rem 1.28rem;
+  border: none;
+}
+.main__moedaSelect {
+  font-size: 1.92rem;
+  border-radius: 1rem;
+  width: 60%;
+  padding: 0.65rem 1.28rem;
+  border: none;
+}
+.main__btnConverte {
+  font-size: 2.3rem;
+  border-radius: 1rem;
+  width: 40%;
+  padding: 0.65rem 1.28rem;
+  border: none;
+  background-color: #081c15;
+  color: #d8f3dc;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="main__caixa-titulo">
+        <h1>
+          Converta o valor em real que você prefirir para a moeda de sua escolha
+        </h1>
+
+        <div class="main__caixa-cotacaoAtual">
+          <div class="main__cotacaoAtual">
+            <h2 class="main__moeda">Dolar Hoje</h2>
+            <p class="main__valor-cotacao">R$:5,50</p>
+          </div>
+
+          <div class="main__cotacaoAtual">
+            <h2 class="main__moeda">Euro Hoje</h2>
+            <p class="main__valor-cotacao">R$:6,00</p>
+          </div>
+        </div>
+      </div>
+      <form class="main__form">
+        <div class="main__conteudoForm">
+          <div class="main__resultConversao">
+            <p class="main__result">0,00</p>
+          </div>
+
+          <input
+            type="text"
+            class="main__moedaCampo"
+            required
+            placeholder="R$ 0,00"
+          />
+
+          <select class="main__moedaSelect">
+            <option value="Dólar">Dólar</option>
+            <option value="Euro">Euro</option>
+          </select>
+
+          <button class="main__btnConverte">Converte Moeda</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
