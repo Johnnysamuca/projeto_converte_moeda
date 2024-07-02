@@ -31,21 +31,20 @@
             <p class="main__result">0,00</p>
           </div>
 
-          <input
-            type="text"
-            class="main__moedaCampo"
-            required
-            placeholder="R$ 0,00"
-          />
+          <div class="main__inputContainer">
+            <input type="text" class="main__moedaCampo" placeholder="R$ 0,00" />
+          </div>
 
           <select class="main__moedaSelect">
-            <option value="Dólar">Dólar</option>
-            <option value="Euro">Euro</option>
+            <option value="USD-BRL">Dólar</option>
+            <option value="EUR-BRL">Euro</option>
           </select>
 
           <button class="main__btnConverte">Converte Moeda</button>
         </div>
       </form>
     </main>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

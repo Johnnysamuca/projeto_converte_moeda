@@ -95,12 +95,27 @@ body {
   font-size: 2.76rem;
   font-weight: 700;
 }
+.main__inputContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1.6rem;
+  max-height: 7.1rem;
+  width: 100%;
+}
 .main__moedaCampo {
   font-size: 1.92rem;
   border-radius: 1rem;
   width: 60%;
   padding: 0.65rem 1.28rem;
   border: none;
+}
+.main__error {
+  border: 3px solid red;
+}
+.main__errorText {
+  color: #ff4d4d;
 }
 .main__moedaSelect {
   font-size: 1.92rem;
@@ -117,6 +132,12 @@ body {
   border: none;
   background-color: #081c15;
   color: #d8f3dc;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+}
+.main__btnConverte:hover {
+  background-color: #74c69d;
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

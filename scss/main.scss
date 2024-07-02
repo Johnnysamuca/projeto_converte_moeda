@@ -105,12 +105,26 @@ body {
     font-weight: 700;
   }
 
+  &__inputContainer {
+    @include flex(column, center, $gap: 1.6rem);
+    max-height: 7.1rem;
+    width: 100%;
+  }
+
   &__moedaCampo {
     font-size: 1.92rem;
     border-radius: 1rem;
     width: 60%;
     padding: 0.65rem 1.28rem;
     border: none;
+  }
+
+  &__error {
+    border: 3px solid red;
+  }
+
+  &__errorText {
+    color: lighten(red, 15%);
   }
 
   &__moedaSelect {
@@ -129,5 +143,12 @@ body {
     border: none;
     background-color: $color-secondary;
     color: $color-neutral;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-light;
+      color: $black;
+    }
   }
 }
