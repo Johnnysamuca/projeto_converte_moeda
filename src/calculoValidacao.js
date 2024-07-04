@@ -1,6 +1,12 @@
 const form = document.querySelector(".main__form");
 const fieldCurrency = document.querySelector(".main__moedaCampo");
 const valueSelect = document.querySelector(".main__moedaSelect");
+const resultprice = document.querySelector(".main__result");
+const coinsNames = document.querySelectorAll(".main__valor-cotacao");
+
+function formatResultConvert(value) {
+  return `R$ ${value.toFixed(2)}`;
+}
 
 export function ReturnValueSelect() {
   return valueSelect.value;
@@ -32,7 +38,23 @@ export function validateForm() {
 }
 
 export function convertValue(data) {
-  const bid = data.USDBRL.bid;
-  const resultConvert = fieldCurrency.value / bid;
-  console.log(resultConvert);
+  const valueSelectedCliente = valueSelect.value.replace("-", "");
+
+  if (valueSelectedCliente === "USDBRL") {
+    const bid = data.USDBRL.bid;
+    const resultConvert = fieldCurrency.value * bid;
+    resultprice.textContent = formatResultConvert(resultConvert);
+  } else if (valueSelectedCliente === "EURBRL") {
+    const bid = data.EURBRL.bid;
+    const resultConvert = fieldCurrency.value * bid;
+    resultprice.textContent = formatResultConvert(resultConvert);
+  }
+}
+
+export async function displayValuesCoinsInRealTime() {
+  const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
+  const respose = await fetch(url);
+  const data = await respose.json();
+  coinsNames[0].textContent = data.USDBRL.bid;
+  coinsNames[1].textContent = data.EURBRL.bid;
 }

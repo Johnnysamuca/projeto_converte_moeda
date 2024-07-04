@@ -2,6 +2,7 @@ import {
   ReturnValueSelect,
   validateForm,
   convertValue,
+  displayValuesCoinsInRealTime,
 } from "./src/calculoValidacao.js";
 const converterButton = document.querySelector(".main__btnConverte");
 
@@ -13,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const response = await fetch(url);
       const data = await response.json();
       convertValue(data);
+      // displayValuesCoinsInRealTime(data);
     } catch (error) {
       console.log(error.message);
     }
   }
 
+  displayValuesCoinsInRealTime();
   converterButton.addEventListener("click", main);
 });
