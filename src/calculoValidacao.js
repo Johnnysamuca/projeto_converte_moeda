@@ -51,10 +51,14 @@ export function convertValue(data) {
   }
 }
 
+function formatValue(valores) {
+  return valores.toFixed(2);
+}
+
 export async function displayValuesCoinsInRealTime() {
   const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
   const respose = await fetch(url);
   const data = await respose.json();
-  coinsNames[0].textContent = data.USDBRL.bid;
-  coinsNames[1].textContent = data.EURBRL.bid;
+  coinsNames[0].textContent = `R$ ${Number(data.USDBRL.bid).toFixed(2)}`;
+  coinsNames[1].textContent = `R$ ${Number(data.EURBRL.bid).toFixed(2)}`;
 }
