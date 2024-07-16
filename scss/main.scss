@@ -28,6 +28,10 @@
     @media (max-width: 710px) {
       @content;
     }
+  } @else if $tamanho == "pequeno" {
+    @media (max-width: 480px) {
+      @content;
+    }
   }
 }
 
@@ -95,6 +99,11 @@ body {
     @include respond(medio) {
       max-width: 60rem;
       @include grid($gridRow: 1 / span 2, $gridColumn: 2 / span 2);
+    }
+
+    @include respond(pequeno) {
+      max-width: 100%;
+      @include grid($gridRow: 1 / span 2, $gridColumn: 1 / span 5);
     }
   }
 

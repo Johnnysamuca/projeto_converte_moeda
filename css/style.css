@@ -72,6 +72,15 @@ body {
     grid-column: 2/span 2;
   }
 }
+@media (max-width: 480px) {
+  .main__caixa-titulo {
+    max-width: 100%;
+    display: grid;
+    grid: none;
+    grid-row: 1/span 2;
+    grid-column: 1/span 5;
+  }
+}
 .main__caixa-cotacaoAtual {
   display: flex;
   flex-flow: row;
