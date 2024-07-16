@@ -76,9 +76,6 @@ body {
 
   @include respond(grande) {
     @include grid(repeat(4, 200px) / repeat(4, 1fr));
-  }
-
-  @include respond(medio) {
     padding-top: 5rem;
   }
 
@@ -91,11 +88,13 @@ body {
 
     @include respond(grande) {
       @include grid($gridRow: 1 / span 2, $gridColumn: 2 / span 2);
+      max-width: 70rem;
+      border-radius: 1rem;
     }
 
     @include respond(medio) {
-      border-radius: 1rem;
       max-width: 60rem;
+      @include grid($gridRow: 1 / span 2, $gridColumn: 2 / span 2);
     }
   }
 
