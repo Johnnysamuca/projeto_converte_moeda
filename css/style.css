@@ -7,31 +7,69 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 1100px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 710px) {
+  html {
+    font-size: 43.75%;
+  }
+}
 
 body {
   font-size: 1.6rem;
   line-height: 1.4;
   font-family: "Montserrat", sans-serif;
   color: #000;
+  height: 100dvh;
+  background-color: #40916c;
 }
 
 .main {
-  height: 100dvh;
-  background-color: #40916c;
+  height: 100%;
   display: grid;
   grid: repeat(2, 1fr)/repeat(4, 1fr);
   grid-row: auto;
   grid-column: auto;
 }
+@media (max-width: 1100px) {
+  .main {
+    display: grid;
+    grid: repeat(4, 200px)/repeat(4, 1fr);
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+@media (max-width: 710px) {
+  .main {
+    padding-top: 5rem;
+  }
+}
 .main__caixa-titulo {
   max-width: 50rem;
   display: grid;
-  grid: auto;
+  grid: none;
   grid-row: 1/span 2;
   grid-column: 1/span 2;
   padding: 1.6rem 2rem;
   background-color: #081c15;
   color: #fff;
+}
+@media (max-width: 1100px) {
+  .main__caixa-titulo {
+    display: grid;
+    grid: none;
+    grid-row: 1/span 2;
+    grid-column: 2/span 2;
+  }
+}
+@media (max-width: 710px) {
+  .main__caixa-titulo {
+    border-radius: 1rem;
+    max-width: 60rem;
+  }
 }
 .main__caixa-cotacaoAtual {
   display: flex;
@@ -51,6 +89,12 @@ body {
   border-radius: 1rem;
   min-height: 20rem;
 }
+@media (max-width: 710px) {
+  .main__cotacaoAtual {
+    padding: 1.6rem 1rem;
+    min-height: 15rem;
+  }
+}
 .main__valor-cotacao {
   font-size: 2.3rem;
   font-weight: 600;
@@ -62,7 +106,7 @@ body {
 }
 .main__form {
   display: grid;
-  grid: auto;
+  grid: none;
   grid-row: 1/span 2;
   grid-column: 3/span 2;
   display: flex;
@@ -70,6 +114,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0;
+}
+@media (max-width: 1100px) {
+  .main__form {
+    display: grid;
+    grid: none;
+    grid-row: 3/span 2;
+    grid-column: 2/span 2;
+  }
 }
 .main__conteudoForm {
   display: flex;

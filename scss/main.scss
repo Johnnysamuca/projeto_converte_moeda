@@ -8,11 +8,27 @@
   gap: $gap;
 }
 
-@mixin grid($grid: auto, $gridRow: auto, $gridColumn: auto) {
+@mixin grid($grid: none, $gridRow: auto, $gridColumn: auto) {
   display: grid;
   grid: $grid;
   grid-row: $gridRow;
   grid-column: $gridColumn;
+}
+
+@mixin respond($tamanho) {
+  @if $tamanho == "grande" {
+    @media (max-width: 1100px) {
+      @content;
+    }
+  } @else if $tamanho == "acimaDamedia" {
+    @media (max-width: 806px) {
+      @content;
+    }
+  } @else if $tamanho == "medio" {
+    @media (max-width: 710px) {
+      @content;
+    }
+  }
 }
 
 // Variaveis
@@ -33,6 +49,14 @@ $white: #fff;
 
 html {
   font-size: 62.5%;
+
+  @include respond(grande) {
+    font-size: 50%;
+  }
+
+  @include respond(medio) {
+    font-size: 43.75%;
+  }
 }
 
 body {
@@ -40,14 +64,23 @@ body {
   line-height: 1.4;
   font-family: "Montserrat", sans-serif;
   color: #000;
+  height: 100dvh;
+  background-color: $color-primary;
 }
 
 // Estilização da main
 
 .main {
-  height: 100dvh;
-  background-color: $color-primary;
-  @include grid(repeat(2, 1fr) / repeat(4, 1fr), auto, auto);
+  height: 100%;
+  @include grid(repeat(2, 1fr) / repeat(4, 1fr));
+
+  @include respond(grande) {
+    @include grid(repeat(4, 200px) / repeat(4, 1fr));
+  }
+
+  @include respond(medio) {
+    padding-top: 5rem;
+  }
 
   &__caixa-titulo {
     max-width: 50rem;
@@ -55,6 +88,15 @@ body {
     padding: 1.6rem 2rem;
     background-color: $color-secondary;
     color: $white;
+
+    @include respond(grande) {
+      @include grid($gridRow: 1 / span 2, $gridColumn: 2 / span 2);
+    }
+
+    @include respond(medio) {
+      border-radius: 1rem;
+      max-width: 60rem;
+    }
   }
 
   &__caixa-cotacaoAtual {
@@ -67,6 +109,11 @@ body {
     padding: 1.6rem 2rem;
     border-radius: 1rem;
     min-height: 20rem;
+
+    @include respond(medio) {
+      padding: 1.6rem 1rem;
+      min-height: 15rem;
+    }
   }
 
   &__valor-cotacao {
@@ -85,6 +132,10 @@ body {
   &__form {
     @include grid($gridRow: 1 / span 2, $gridColumn: 3 / span 2);
     @include flex($align: center, $justify: center);
+
+    @include respond(grande) {
+      @include grid($gridRow: 3 / span 2, $gridColumn: 2 / span 2);
+    }
   }
 
   &__conteudoForm {
