@@ -20,18 +20,18 @@ export function validateForm() {
     fieldCurrency.value <= 0 ||
     fieldCurrency.value === ""
   ) {
+    if (fieldCurrency.classList.contains("main__error")) {
+      e.preventDefault();
+      return;
+    }
+
     fieldCurrency.classList.add("main__error");
     const textErro = document.createElement("p");
     textErro.classList.add("main__errorText");
     textErro.innerText = "*Por favor informe um valor numerico e acima de 0";
     fieldCurrency.parentElement.appendChild(textErro);
     throw new Error("Por favor informe um valor numerico e acima de 0");
-  } else if (
-    fieldCurrency.classList.contains("main__error") &&
-    !isNaN(fieldCurrency.value) &&
-    fieldCurrency.value > 0 &&
-    fieldCurrency.value !== ""
-  ) {
+  } else if (fieldCurrency.parentElement.querySelector(".main__errorText")) {
     fieldCurrency.classList.remove("main__error");
     fieldCurrency.parentElement.querySelector(".main__errorText").remove();
   }
@@ -49,10 +49,6 @@ export function convertValue(data) {
     const resultConvert = fieldCurrency.value * bid;
     resultprice.textContent = formatResultConvert(resultConvert);
   }
-}
-
-function formatValue(valores) {
-  return valores.toFixed(2);
 }
 
 export async function displayValuesCoinsInRealTime() {
