@@ -152,6 +152,10 @@ body {
     min-width: 60rem;
     border-radius: 1rem;
     padding: 2rem 2.5rem;
+
+    @include respond(pequeno) {
+      min-width: 100%;
+    }
   }
 
   &__resultConversao {
@@ -208,6 +212,10 @@ body {
     &:hover {
       background-color: $color-primary-light;
       color: $black;
+    }
+
+    @include respond(pequeno) {
+      width: 100%;
     }
   }
 }
