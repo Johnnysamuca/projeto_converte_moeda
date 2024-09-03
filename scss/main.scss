@@ -166,6 +166,10 @@ body {
     height: 15rem;
     font-size: 2.76rem;
     font-weight: 700;
+
+    @include respond(pequeno) {
+      width: 100%;
+    }
   }
 
   &__inputContainer {
@@ -180,6 +184,10 @@ body {
     width: 60%;
     padding: 0.65rem 1.28rem;
     border: none;
+
+    @include respond(pequeno) {
+      width: 90%;
+    }
   }
 
   &__error {
@@ -196,6 +204,10 @@ body {
     width: 60%;
     padding: 0.65rem 1.28rem;
     border: none;
+
+    @include respond(pequeno) {
+      width: 90%;
+    }
   }
 
   &__btnConverte {

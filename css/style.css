@@ -144,6 +144,11 @@ body {
   border-radius: 1rem;
   padding: 2rem 2.5rem;
 }
+@media (max-width: 480px) {
+  .main__conteudoForm {
+    min-width: 100%;
+  }
+}
 .main__resultConversao {
   display: flex;
   flex-flow: row;
@@ -156,6 +161,11 @@ body {
   height: 15rem;
   font-size: 2.76rem;
   font-weight: 700;
+}
+@media (max-width: 480px) {
+  .main__resultConversao {
+    width: 100%;
+  }
 }
 .main__inputContainer {
   display: flex;
@@ -173,6 +183,11 @@ body {
   padding: 0.65rem 1.28rem;
   border: none;
 }
+@media (max-width: 480px) {
+  .main__moedaCampo {
+    width: 90%;
+  }
+}
 .main__error {
   border: 3px solid red;
 }
@@ -185,6 +200,11 @@ body {
   width: 60%;
   padding: 0.65rem 1.28rem;
   border: none;
+}
+@media (max-width: 480px) {
+  .main__moedaSelect {
+    width: 90%;
+  }
 }
 .main__btnConverte {
   font-size: 2.3rem;
@@ -200,6 +220,11 @@ body {
 .main__btnConverte:hover {
   background-color: #74c69d;
   color: #000;
+}
+@media (max-width: 480px) {
+  .main__btnConverte {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
